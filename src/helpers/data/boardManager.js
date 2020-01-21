@@ -25,6 +25,11 @@ const getBoardsByUid = (uid) => {
     console.log("boards", boards);
     return boards;
   })
-
 }
-export default { getBoardsByUid };
+
+const getSingleBoard = (boardId) => {
+  return fetch(`${baseUrl}/boards/${boardId}.json`)
+  .then(response => response.json())
+}
+
+export default { getBoardsByUid, getSingleBoard};
